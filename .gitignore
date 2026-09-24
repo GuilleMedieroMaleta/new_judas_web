@@ -1,5 +1,11 @@
-# Originales del archivo. GitHub rechaza archivos de más de 100 MB
-# y un push de varios GB. La web publica copias en fotos/archivo y videos/web.
+# Las fotos y los videos de la web estan en Cloudflare R2.
+# No se suben copias a este repositorio.
+fotos/*.jpeg
+fotos/*.jpg
+fotos/*.png
+fotos/*.webp
+videos/web/
+videos/hero/
 fotos/Judas 14/
 fotos/drive-download-*/
 fotos/fotos judas/

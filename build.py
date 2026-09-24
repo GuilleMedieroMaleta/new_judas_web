@@ -181,6 +181,7 @@ VIDEO_LABELS = {
     "have-you-ever-seen-the-rain.mp4": ("Have You Ever Seen the Rain", "JUDAS en directo."),
     "mp41.mp4": ("Actuación", "Grabación de archivo."),
     "archivo.mp4": ("Archivo", "Grabación del grupo."),
+    "archivo-extra.mp4": ("archivo extra", "Archivo audiovisual"),
     "50-aniversario.mp4": ("50 aniversario", "11 de enero de 2025."),
     "en-directo.mp4": ("En directo", "Actuación del grupo."),
     "leon-de-oro.mp4": ("León de Oro", "25 de febrero de 2025."),
@@ -189,15 +190,24 @@ VIDEO_LABELS = {
 
 
 def web_videos() -> list:
-    folder = ROOT / "videos" / "web"
-    if not folder.is_dir():
-        return []
+    names = [
+        "50-aniversario.mp4",
+        "actuacion-2.mp4",
+        "actuacion.mp4",
+        "archivo-extra.mp4",
+        "archivo.mp4",
+        "en-directo.mp4",
+        "grupo-judas.mp4",
+        "have-you-ever-seen-the-rain.mp4",
+        "judas-amador.mp4",
+        "leon-de-oro.mp4",
+        "mp41.mp4",
+        "whatsapp-2026-07-29.mp4",
+    ]
     items = []
-    for path in sorted(folder.glob("*.mp4")):
-        title, caption = VIDEO_LABELS.get(
-            path.name, (path.stem.replace("-", " "), "Archivo audiovisual")
-        )
-        items.append((path.relative_to(ROOT).as_posix(), title, caption))
+    for name in names:
+        title, caption = VIDEO_LABELS.get(name, (name.replace("-", " "), "Archivo audiovisual"))
+        items.append((f"videos/web/{name}", title, caption))
     return items
 
 
