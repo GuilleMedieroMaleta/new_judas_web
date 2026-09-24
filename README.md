@@ -12,7 +12,14 @@ js/site.js           menú en móvil y marca de la página actual
 build.py             generador de las páginas (cabecera, menú y pie)
 logo.png             logo limpio, usado en la web
 logo-original.png    logo tal como se entregó, con la marca de agua
+fotos/archivo/       fotos listas para la web (generadas)
+videos/web/          vídeos listos para la web (generados)
 ```
+
+Los originales de `fotos/` y `videos/` no se suben: GitHub rechaza cualquier
+archivo de más de 100 MB y un push de varios GB. Para regenerar las copias
+publicables: `python optimize_photos.py` y `python optimize_videos.py`, y
+después `python build.py`.
 
 ## Cómo cambiar cosas
 

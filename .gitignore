@@ -1,0 +1,12 @@
+# Originales del archivo. GitHub rechaza archivos de más de 100 MB
+# y un push de varios GB. La web publica copias en fotos/archivo y videos/web.
+fotos/Judas 14/
+fotos/drive-download-*/
+fotos/fotos judas/
+videos/*.mp4
+videos/*.MP4
+videos/*.mov
+videos/*.MOV
+Thumbs.db
+desktop.ini
+*.db
