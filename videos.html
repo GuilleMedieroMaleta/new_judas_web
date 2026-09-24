@@ -71,6 +71,19 @@
   <div class="wrap"><p>Archivo web dedicado a JUDAS, grupo de Miranda de Ebro. La información se amplía con documentación, fotografías y recuerdos aportados por fuentes públicas y por quienes vivieron la historia del grupo.</p></div>
 </footer>
 
+<script>
+(function () {
+  "use strict";
+  var videos = document.querySelectorAll(".exhibit video");
+  videos.forEach(function (video) {
+    video.addEventListener("play", function () {
+      videos.forEach(function (other) {
+        if (other !== video && !other.paused) other.pause();
+      });
+    });
+  });
+})();
+</script>
 <script src="js/site.js?v=3" defer></script>
 </body>
 </html>
