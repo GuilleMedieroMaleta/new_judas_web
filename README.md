@@ -6,7 +6,7 @@ Web estática, sin dependencias ni compilación obligatoria. Abre `index.html` p
 
 ```
 index.html  historia.html  musicos.html  fotos.html  videos.html
-conciertos.html  prensa.html  archivo.html  50-aniversario.html
+conciertos.html  prensa.html  50-aniversario.html
 css/style.css        estilos, con las variables de color al principio
 js/site.js           menú en móvil y marca de la página actual
 build.py             generador de las páginas (cabecera, menú y pie)

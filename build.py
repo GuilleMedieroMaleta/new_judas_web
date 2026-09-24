@@ -22,7 +22,6 @@ NAV = [
     ("videos.html", "Vídeos"),
     ("conciertos.html", "Conciertos"),
     ("prensa.html", "Prensa"),
-    ("archivo.html", "Archivo"),
     ("50-aniversario.html", "50 años"),
 ]
 
@@ -119,22 +118,22 @@ def media_src(path: str) -> str:
 
 VIDEOS = [
     (
-        "videos/web/grupo-judas.mp4",
+        "videos/hero/grupo-judas.mp4",
         "Grupo JUDAS",
         "Miranda de Ebro · Burgos · España",
     ),
     (
-        "videos/web/judas-amador.mp4",
+        "videos/hero/judas-amador.mp4",
         "JUDAS y Amador Izquierdo",
         "Miranda de Ebro · Burgos · España",
     ),
     (
-        "videos/web/actuacion.mp4",
+        "videos/hero/actuacion.mp4",
         "Actuación",
         "Grabación del grupo en directo.",
     ),
     (
-        "videos/web/actuacion-2.mp4",
+        "videos/hero/actuacion-2.mp4",
         "Actuación",
         "Otra grabación de archivo en directo.",
     ),
@@ -145,10 +144,9 @@ def hero_bg_videos(items) -> str:
     clips = []
     for i, (src, _title, _caption) in enumerate(items):
         href = media_src(src)
-        active = ' class="is-active"' if i == 0 else ""
-        preload = "auto" if i == 0 else "metadata"
+        active = ' class="is-active" autoplay' if i == 0 else ""
         clips.append(
-            f'    <video{active} muted playsinline loop preload="{preload}" tabindex="-1">'
+            f'    <video{active} muted playsinline loop preload="auto" tabindex="-1">'
             f'<source src="{href}" type="video/mp4"></video>'
         )
     return (
@@ -263,7 +261,6 @@ PAGES = {
                             ("videos.html", "Vídeos", "Actuaciones, televisión, entrevistas y material audiovisual."),
                             ("conciertos.html", "Conciertos", "Escenarios, actuaciones señaladas y recuerdos de carretera."),
                             ("prensa.html", "Prensa", "Noticias y documentos publicados sobre el grupo."),
-                            ("archivo.html", "Archivo", "Carteles, entradas, documentos y piezas pendientes de localizar."),
                         ],
                         link=True,
                     )
@@ -423,29 +420,6 @@ PAGES = {
                 ]
             )
             + "\n    </div>"
-        ),
-    ),
-    "archivo.html": dict(
-        title="Archivo · JUDAS",
-        description="Piezas por recuperar del archivo de JUDAS: carteles, entradas, hemeroteca, repertorio y grabaciones.",
-        main=section(
-            "    <h2>Archivo</h2>\n"
-            '    <p class="deck">Ésta es la parte más abierta de la web. La idea es que,'
-            " con el tiempo, aquí aparezcan documentos originales y no sólo textos sobre"
-            " ellos.</p>\n"
-            + cards(
-                [
-                    ("Carteles", "Carteles de fiestas, salas, verbenas y conciertos."),
-                    ("Entradas", "Entradas, programas y recuerdos de actuaciones."),
-                    ("Prensa antigua", "Hemeroteca de los años 70 y 80 por localizar."),
-                    ("Televisión Española", "Documentación sobre la aparición en Gente joven."),
-                    ("Repertorio", "Lista de canciones y versiones que tocaban en distintas épocas."),
-                    ("Grabaciones", "Casetes, cintas, fotografías de estudio y posibles grabaciones propias."),
-                ]
-            )
-            + "\n"
-            '    <blockquote class="quote quote--plain"><p>Si tienes una foto de JUDAS'
-            " guardada en un cajón, quizá esa foto sea una pieza que falta aquí.</p></blockquote>"
         ),
     ),
     "50-aniversario.html": dict(

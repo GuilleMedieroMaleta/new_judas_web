@@ -234,7 +234,6 @@ p:last-child { margin-bottom: 0; }
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.8s ease;
 }
 .hero-bg video.is-active {
   opacity: 1;
