@@ -112,8 +112,14 @@ def cards(items, link=False, wide=False) -> str:
     return f'    <div class="{cls}">\n' + "\n".join(rows) + "\n    </div>"
 
 
+R2_PUBLIC = "https://pub-b47a15cd476946818777e182bcc31592.r2.dev"
+
+
 def media_src(path: str) -> str:
-    return "/".join(quote(part, safe=".-") for part in path.split("/"))
+    href = "/".join(quote(part, safe=".-") for part in path.split("/"))
+    if path.startswith(("fotos/", "videos/web/", "videos/hero/")):
+        return f"{R2_PUBLIC}/{href}"
+    return href
 
 
 VIDEOS = [
